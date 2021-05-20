@@ -1,0 +1,13 @@
+Windows{
+	Win+.														Brings up an emoji selection screen. 😂
+	Win+V														Brings up the clipboard history
+		(if enabled in Start > Settings > System > Clipboard)	
+	Win+L														Locks computer.
+	Environment Variables
+		Paths added to PATH allow windows to access all files within that path. 
+		Paths added to variables allow windows to replace the variable with the path. 
+	Win-x b, Alt-M												(Opens Windows Mobility Center, )Mutes Audio
+	Shift+F10													Opens Context Menu (Right-click)
+	Win + E 													Opens new File Explorer instance
+	Win+Shift+Direction 										Moves currently selected window to different monitor
+}

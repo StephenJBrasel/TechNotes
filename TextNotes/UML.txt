@@ -1,0 +1,25 @@
+UML{
+	Universal Modeling Language 
+	Squiggly Rect
+		Document
+	Rect
+		Process
+	Arrow Marker
+		Display
+	Attributes
+		[Accesibility][AttributeName](VarType VarName... ): [type/returnType]
+	Accessibility
+		- private
+		+ public
+		# protected
+		~ default/package-private
+	Class Diagram
+		Classname
+		fields
+		methods
+	Multiples
+		0..1 			zero to one (optional)
+		n				specific number
+		n..*			specific number to many
+		m..n			specific number range 
+}

@@ -1,0 +1,277 @@
+Programming{
+	Declaration
+		the creation of a reference to an object.
+		int i;
+	Initialization
+		the creation of a reference (veraible) that may or may not have a value
+		int i = 0;
+	Instantiation
+		the creation of a object in memory
+
+	Keep your code DRY:
+		D on't
+		R epeat
+		Y ourself.
+
+	Paradigms
+		Imperative
+			Data is mutable
+			Expresses logic of a computation with describing its control flow
+		Declarative
+			Data is immutable
+			Describes computation in terms of statements that change a program state.
+		Functional 
+			Treats computation as the avaluation of mathematical functions 
+	
+	3-Tier Architecture
+		Persistence Layer
+			Database
+		Application Layer / Business Layer
+			Services. 
+				Validate and enforce business logic.
+			Great for throwing exceptions. 
+		User Layer
+			Interaction.
+			Rendering.
+
+	Authorization
+		What are you allowed to do?
+	Authentication
+		Who are you?
+
+	Separation of Concerns
+		Separate the concerns of implemented child classes from each other. 
+		Modularization
+
+
+	OOP Pillars (APIE)
+		Abstraction
+			a technique for dealing with complexity by providng users with a simplified interface which hides the coplex details of an operation
+			The proces of taking away oir removing characteristics from something in order to reduce it to a set of essential characteristics
+			Enforces a clear separation between the abstract properties of a data type and the concrete details of its implementation
+			In strongly-0typed OOP languages, such as Java, it is recommended that concrete implementations be based upon abstract structures (i.e. interfaces)
+		Polymorphism
+			The ability for something to occur in several forms
+				method overloading, overriding
+				downcasting/upcasting
+			Types:
+				ad hoc
+				parametric
+				inclusion
+			Literally: "many forms"
+				the ability to present the same interface for differing underlying data types
+			The terms static and dynamic refer to the point at which the actual implementation is determined; at compilation or runtime
+			Implementations:
+				Ad hoc
+					defines a common interface for an arbitrary set of individually specified types
+				Parametric
+					when a type cxan be declared absrtractly so that asects of its implementation can be declard at ruyntime through the use of a parameterized type
+				Inclusion
+					when a name denotes instances of many different classes related by come common superclass
+		Inheritance
+			The mechanism of basing an object or class upon another object or class
+			Types:
+				class-based
+					C languages
+				prototypal
+					javascript
+			The mechanism of basing an object or class upon another objhect or class, retaining similar implementation
+				Establishes an "is-a" relationship between objects
+			Class-Based
+				Classes are templates which are used to create objects at runtime
+				Classes can extend other classes, retaining the base implementation
+			Prototypal
+				Also known as "classless inheritance"
+				A prototype is a base object which can be cloned and extended
+				This form of inheritance is supported by delegation
+		(APILE) Layering
+			persistence
+			service
+			ui
+		Encapsuilation
+			the idea of bundling data and methods that work on the data within one unit
+			The idea an object's state should be accessed and manipulated through a public interface (i.e. accessors/getters and mutators/setters)
+			Some languages support the ability to declare a visibility of a member using access modifying keywords
+				public, protected, package-private, private
+
+		(Composition, Aggregation, Association)
+			Composition describes a relationship between two or more objects where one object maintains instances of the other object(s). 
+				(has-a)
+				associated objects do not perform the same task that the conglomerate performs.
+				The compopsite object is responsible for the lifecycle of all constituant instances
+				Example: An order has multiple line items
+				:A computer has an SSD card
+			Aggregation describes a relationship between two or more objects where one object contains multiple instances of other objects. 
+				(has-a)
+				The lifecycle of the containeed objects are independent of the aggregate object's
+				Example: A department has multiple employees
+				:A computer has software.
+			Association describes a relationship between two objects where one object uses a separate instance of another object as a part of its functionality
+				(uses-a)
+				associated objects work externally.
+				The lifecycle of the two objects are entirely separate from one another
+				Example: A computer uses a keyboard
+				:A computer uses a power cable.
+			Association -> Aggregation -> Composition
+
+	Solid Principles
+		Single Responsibility
+			Objects should have one and only one (general) purpose
+			A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class.
+			This principle states that software component (function, class or module) should focus on one unique tasks (have only one responsibility).
+		Open/Closed
+			Open for extension; closed for modification
+			"Software entities ... should be open for extension, but closed for modification."
+			This principle states that software entities should be designed with the application growth (new code) in mind (be open to extension), but the application growth should require the smaller amount of changes to the existing code as possible (be closed for modification).
+		Liskov Substitution
+			Derived objects should be substitutable for their base implementations
+			"Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program." See also design by contract.
+			This principle states that we should be able to replace a class in a program with another class as long as both classes implement the same interface. After replacing the class no other changes should be required and the program should continue to work as it did originally.
+		Interface Segregations
+			Users of interfaces should not be dependent upon methods they do not use
+			"Many client-specific interfaces are better than one general-purpose interface."[4]
+			This principle states that we should split interfaces which are very large (general-purpose interfaces) into smaller and more specific ones (many client-specific interfaces) so that clients will only have to know about the methods that are of interest to them.
+		Dependency Inversion
+			Concrete implementations should be based upon abstract definitions
+			One should "depend upon abstractions, [not] concretions."[4]
+			This principle states that entities should depend on abstractions (interfaces) as opposed to depend on concretion (classes).
+
+			You wouldn't want to solder you lamp to the outlet, would you?
+	Function purity
+		Pure									pure functions take something in, puts something out
+		Unpure									pure functions take something in and change something.
+
+	Stages of Red/Green Development (Test Driven Development)
+		Red										Your tests should fail
+			Go write the code
+		Red/Green								Your tests should pass
+		Refactor
+
+	Expression
+		A unit of code that resolves a value. A statement is made up of expressions. 
+	Statement
+		A unit of code that tells the computer what action to perform. A Statement is made up of expressions.
+	Data Structures
+		Reasons for use
+			Organizaiton of Data
+				Linked to one another
+				All in one block of memory
+			Efficient Access
+				efficient search
+				efficient 
+			Efficient modification
+				Add
+				Delete
+				Rearrange
+
+			Convenient operations
+		Structures
+			Linear
+				Examples
+					Arrays
+						most basic data structure
+						used in more complex data structures
+						holds fixed number of elements, which can be accesses by their position in the array, or index
+						Elements are homogenous (of the same type)
+						Use if ACCESSING data more often
+					Linked Lists
+						Technically, a sequence of data structures called nodes
+						Nodes contain the data bewing stored, as well as a reference to the next node in the structure
+						The node at the beginning is the head, the node at the end is the tail
+						Use if MODIFYING/Search data more often.
+					Stacks
+						LIFO/FILO 
+							Last In, First Out/First In, Last Out
+						Inserting an element onto a stack is known as pushing
+							Removing is known as popping
+							Obtaining the value, but not modify, it's known as peeking
+					Queues
+						FIFO/LILO 
+							First in, First out/ Last in, Last out
+						enqueueing/dequeueing
+							add value to back of queue/ remove value from front of queue
+							Another type of queue that can have insert that can have insert and removal operations performed at either end is known as a deque
+								Deque: Double Ended Que
+						Only have access to the ends of the data structure 
+				Properties
+					arranges in a sequence
+					elements within the data structure not necessarily "related" (parented, childed) to each other
+					simple structures makes them easier to implement
+
+			Hierarchical
+				Examples
+					Tree
+						OS File System Structure
+						In-memory representation of an HTML doc
+						Components:
+							Nodes
+								A structure with data and at least one pointer to another node that may also include an edge.
+								Root/Batman Node
+									Node with no parents.
+								Leaf
+									Node with no children
+							Edges
+								A weighted value between nodes
+							Parent
+								a node A that points to another node B
+							Child
+								a node A that is pointed to by another node B
+							Sibling
+								a node that has a
+							Path/Branch
+					Heaps
+						A sorted binary tree
+						Max-Heap the root node's value is the max value
+						Min-Heap the root node's the min value in the structure
+						Uses a sorting algorithm known as a heapsort
+					Graphs
+						DAG = Directed Acyclical Graph
+				Properties
+					Elements are not organized in a sequential manner
+					Elements are sorted within the structure based upon their relation to one another
+					More complex structure makes them harder to implement
+			Operatinos
+				Inserting
+				Deleting
+				Searching
+				Traversing/Iterating
+					You TRAVERSE Hierarchical 
+					You ITERATE THROUGH Linear
+				Sorting
+				Merging
+	
+
+
+
+
+	Cases
+		Edge Case
+			http://en.wikipedia.org/wiki/Edge_case
+			occurs at an extreme
+		Corner Case
+			http://en.wikipedia.org/wiki/Corner_case
+			occurs outside of normal operating parameters, specifically when multiple environment varialbes or conditions are simultaneously at extreme levels, even though each parameter is within the specified range for that parameter
+		Base Case
+			http://en.wikipedia.org/wiki/Base_case
+			where recursion ends.
+		Boundary Case
+			http://en.wikipedia.org/wiki/Boundary_case
+			occurs when one of inputs is at or just beyond maximum or minimum limits
+	Throwable						superclass of error and exception
+									can use the keyword "throw"
+									keyword method signature can include "throws"
+		Errors vs Exceptions
+			Errors
+				more fatal
+				should not try to catch
+				ThreadDeath
+				OutOfMemoryError - the heap is out of memory
+				StackOverflowError - exceeded memory allows in the Stack of the JVM.
+			Exceptions
+				minor
+				try/catch blocks
+					multicatch blocks:
+						exception | otherExcetion | anotherException
+					ordered most specific -> least specific
+				RunTimeException (checked exception)
+}

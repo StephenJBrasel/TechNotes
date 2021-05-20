@@ -1,0 +1,34 @@
+IntelliJ / Webstorm{
+	Selection{
+		Alt+J 											Select next occurence{
+			Shift+Alt+J 								Unselect occurence
+		}
+		Ctrl+Shift+Alt+J 								Select all occurences
+	}
+
+	Insertion{
+		Shift+Alt+LeftClick								multiple Caret insertion
+		Ctrl+Ctrl+Up/Down								multiple caret insertion above/below.
+	}
+	
+	Double-Shift									Search everywhere.
+	To rename an IntelliJ project {
+		Right Click on project name in the hierarchy -> Refactor -> rename -> newName
+		(Optional? if maven, ) pom.xml -> artifactId -> newName 
+		open project in file explorer -> close project in Intellij -> rename project folder in file explorer
+		re-open project
+	}
+	Ctrl+Tab												switch to last tab.{
+		Ctrl+Tab -> hold Ctrl					opens list of recently opened tabs/useful window views.
+	}
+	Ctrl+Shift+Direction						Resizes any focused open panel # terminal, run, Project, etc.
+	Ctrl+Shift+E										Shows Recent Locations (optionally, show only locations that were edited)
+	Live Templates									IntelliJ version of Snippets. Text completion.{
+		//reg 										//region [] + //endregion 
+		//for 										for(int i = 0; i <  ; i++)
+	}
+	Shift+Alt+Up/Down Arrow							Move lines of code 
+	Documentation{
+		Type the opening block comment /** and press Enter to generate documentation.
+	}
+}

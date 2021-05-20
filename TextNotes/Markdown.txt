@@ -1,0 +1,15 @@
+MarkDown{
+	Heading
+		N # 			(use one space between the # sign and the heading text)
+			# 			Heading 1
+			## 			Heading 2
+			### 		Heading 3
+			...
+		Underline
+			Heading Level 1				<- Heading 1
+			###############				<-^^
+
+			Heading Level 2				<- Heading 2
+			---------------				<-^^
+		
+}

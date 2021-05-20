@@ -1,0 +1,22 @@
+Maven{
+	POM												Project Organization Model
+	Users/USERNAME/.m2 								Maven Dependencies folder 
+		Here's where it stores the junit versions
+		mvn test 									Runs the Maven build cycle up to a specific build type.
+			validate
+			compile
+			test
+			package
+			verify
+			install
+			deploy
+		Scopes
+			compile
+			provided
+			runtime
+			test
+			system
+			import
+		mvn clean									deletes the /target folder
+		mvn clean oackage
+}

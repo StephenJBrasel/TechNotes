@@ -1,0 +1,16 @@
+Google{
+	Search
+		Advanced
+			all of these words									type words separated by space
+				rat terrier tricolor
+			this exact word or phrase							put exact text in quotes
+				"rat terrier"
+			any of these words									type OR between words you could have in results
+				miniature OR standard
+			none of these words									put a minus sign in front of words you don't want
+				-rodent, -"Jack Russell"
+			numbers ranging from 								put 2 periods between the numbers and add a unit of measure
+				10..35 lb, $300..$500, 2010..2011
+			
+			language
+}

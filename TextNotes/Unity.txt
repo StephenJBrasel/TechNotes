@@ -1,0 +1,13 @@
+Unity{
+	F															focuses the currently selected object so that the camera centers on it.
+		Shift+F													allows you to keep focus on moving objects in a scene.
+	Holding Alt while clicking on an expandable arrow (>)		all children are expanded.
+	(>Child
+		>Child of Child
+			>Child of Child of Child)
+	Holding 'V' 												allows you to grab objects' by a vertex, and snaps the grabbed objects to other vertices. 
+	Alt + LMouse												allows you to rotate around an object.
+	Project Things to a canvas:
+		Camera.ScreenToWorldPoint	take a position on the screenspace canvas and project, and beam it into the world space.
+		Camera.WorldToScreenPoint	take a position in real world and translate it to screenspace.
+}

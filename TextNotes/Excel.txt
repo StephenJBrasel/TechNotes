@@ -1,0 +1,14 @@
+Excel{
+	Use the `$` symbol to denote absolute cell references:
+		$A$3 refers to A3 no matter where you copy and paste the formula.
+
+	Ctrl+PgUp													Go to previous tab in excel
+	Ctrl+PgDwn													Go to next tab in excel
+	Ctrl+Space													Select current Column
+	Shift+Space													Select current Row
+	F2															Enter edit mode for currently selected cell.
+	Ctrl+C														Copy
+	Ctrl+Alt+V													Brings up the Paste Menu
+		L														Selects option to paste link.
+}
+--------

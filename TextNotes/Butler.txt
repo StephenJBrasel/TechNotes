@@ -1,0 +1,6 @@
+Butler{
+	butler push
+		butler push Directory Name/game:platform-release
+			C:\Users\Stephen\Dropbox\Projects\Unreal Engine\Test\PuzzlePlatforms\Build\WindowsNoEditor> 
+				butler push "C:\Users\Stephen\Dropbox\Projects\Unreal Engine\Test\PuzzlePlatforms\Build\WindowsNoEditor\PuzzlePlatforms.zip" StephenBrasel/puzzle-platforms-demo:windows-alpha
+}

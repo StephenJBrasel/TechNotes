@@ -1,0 +1,15 @@
+Visual Studio Code{
+	Settings Sync Gist: 8a24dbe827d1f7320147e5ae82bfb768
+	Ctrl+D														SelectNextOccurrence
+	Ctrl+Shift+L												SelectAllOccurrencesOfFindMatch
+	Ctrl+Alt+Up													AddCaretAbove
+	Ctrl+Alt+Down												AddCaretBelow
+	Alt+Shift+I													ConvertSelectionToMultipleCursors
+	--------
+	//Added.
+	// Ctrl+K+S => change case commands.
+	Capslock + Capslock											TRANSFORM SELECTION TO UPPERCASE.
+		I'm trying to get this to toggle between cases.
+	Alt + Capslock + Alt + Capslock								Transform Selection To Titlecase.
+	Shift + Capslock + Shift + Capslock							transform selection to lowercase.
+}

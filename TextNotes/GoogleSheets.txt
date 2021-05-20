@@ -1,0 +1,12 @@
+Google Sheets{
+	Data/Data Validation
+		Set Ranges of cells to only be editable if certain conditions are met.
+			This enables Dropdown menus.
+	View/Freeze
+		Freezes up to N rows so that they remain when scrolling.
+	Time
+		Ctrl+; (semicolon)										to enter the current date.
+		Ctrl+Shift+; (semicolon)								to enter the current time.
+		Ctrl+Alt+Shift+; (semicolon)							to add both, current date and time.
+}
+--------

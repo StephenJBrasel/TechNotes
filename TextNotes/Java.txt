@@ -1,0 +1,110 @@
+Java{
+	Functions
+		a declared process that is without an object. This cannot happen in the Java language.
+		A function is a piece of code that is called by name. It can be passed data to operate on (i.e. the parameters) and can optionally return data (the return value). All data that is passed to a function is explicitly passed.
+
+		A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:
+
+		A method is implicitly passed the object on which it was called.
+		A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
+		(this is a simplified explanation, ignoring issues of scope etc.)
+	Methods
+		Functions encapsulated in Objects.
+	Java is Pass-By-Value always and forever.
+
+	Stack
+		Used for static memory allocation of primitive values or references to objects in the heap
+	Heap
+		Used for dynami memory allocation for Java objects and JRE classes at the runtime
+	Multiple threads get their own stack.
+
+	You can make static
+		variables
+		methods
+			you cannot override static methods
+			you can only shadow static methods 
+		blocks
+		classes
+	Imports
+		import com.path.specific				import a single type in another package
+		import com.path.*						imports all types within another package
+		import static com.path.prefix			imports a static package from another class 
+		import static com.path.*				imports all static packages from another class
+
+	Scopes
+		class -> instance -> method -> block
+
+	Labels
+		keyword:								You can use labels to break or continue at specific parts of the code.
+
+	Access Modifiers
+		public									everybody
+		protected								subclass
+		package-private							package
+		private									class
+
+	Non-Acesss Modifying Keyword
+		static									member belongs to the class, not to individual instances
+			All isntances share access to static members
+			Member are invoked without an instance, using the class name
+		final									
+			variables							value will never be reassigned after initialization
+			methods								subclasses cannot override
+			classes								class cannot be extended. 
+		transient								member will not be serialized when object undergoes serialization
+		synchronized							member is only accessible by a single thread at a time
+
+	Converting a primitive data type into an Object of that type is called autoboxing. 
+		The reverse is called unboxing.
+	instanceof									returns bool value as to whether an object is an instance of a class.
+	(.)											invocation operator.
+
+	JDK
+		Java Development Kit
+			The kit developers use to develop software.
+			The absolute minimum needed to develop java.
+	JRE
+		Java Runtime Environment 
+			The environment in which Java runs.
+			This contains the JRE
+	JVM
+		Java Virtual Machine
+			The specific interface between Java byte code and the platform that the Java code will run on.
+				JVM for Windows is different from the JVM for Linux, Mac environments.
+	String.intern() makes a string object point to its equivalent, if any, in the String pool. 
+
+	Packages
+		reverse url notation						com.namespace.specifics
+
+	Regions
+		//region name
+		//code (NO BLANK LINE AFTER //region)
+		//endregion
+
+	Interfaces
+		LIKE extends LIKE
+			classes extend 0 or 1 other classes
+			interfaces can extend 0 or more interfaces
+		DO NOT have constructors
+			Does not need to be instantiated
+
+	API Hierarchy
+		Iterable
+			Collection https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html
+				Dynamically sizeable
+				List
+					AbstractList
+						Vectors - slow, but Threadsafe
+						ArrayList - Fast, but not Threadsafe
+
+				Set
+					AbstractSet
+						HashSet
+				Queue
+					Deque
+
+	distinguish the difference between:
+		Collection - the interface
+		Collections - the utility class that exposes convenient methods for working on Collection implementations
+		collection(s) - any aggregate data structure
+}

@@ -1,0 +1,11 @@
+HTML{
+	Bold
+		<b> 		only bolds visually
+		<strong>	applies bold visually AND emphasizes words for screenreaders
+Marker Interfaces
+	Serializable
+	Clonable
+	Remote 
+Serialization
+	Make class implement Serializable interface 
+}

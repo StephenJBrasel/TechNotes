@@ -1,0 +1,177 @@
+Unreal{
+	Ctrl+Shift+Comma											Brings up the GPU Profiler
+	Ctrl+Alt+LMB,drag											Marquee Selects in viewport everything in the rectangle the user drags over.
+	Alt+LMouse													Rotates entire scene around current selection or point. (You can end up with an inverted mouse control like this.)
+																Deletes connection between Nodes in blueprint mode.
+	RMouse+Direction+Scrollwheel								change the speed of in-editor flight as you're flying.
+	Shift+F1													Returns mouse control to the user from Play Mode.
+	Shift+LMouse Click											Expands/Collapses all elements in a hierarchy
+	F12															Go To Definition
+		useful for finding implementations of interfaces
+
+	--------
+	Production Notes{
+		Save Code in IDE,
+			Compile Code in Unreal Engine
+		During building, keep the lighting quality setting mid-low, then on the final pass of a game change to Production, which is the highest quality setting.
+	}
+	--------
+	BluePrints Notes{
+		Events -> Actions -> Objects
+			Unreal events call Actions that change Objects.
+		LEVELBLUEPRINTS control Level scenarios (maps)
+		Blueprints for different things can apply changes to those specific things. 
+			no, really.
+		Public/Private variables can be created by 
+			CLICKING THE EYE next the Variable name in the Blueprint editor.
+		A ton of different functions apply to variables, but they've split them all up into different types. 
+			Integer + Integer, Float + Float, Byte + Byte etc.
+		The variable types are all represented.
+			I wonder if you could create your own types? Maybe structs, but I don't know if they'd show up as variables... 
+		Condition Checking
+			
+			Equals()
+		Loops
+			For Loop
+			While
+			Foreach
+		Is Valid
+			Tells you whether an object can be utilized in the code or not.
+			(null check?)
+		Game Mode Blueprints - ubiquitous throughout the course of the game.
+			Can be overridden on individual levels.
+		Functions can't use time-oriented nodes (delay), but events and macros can.
+		Switches
+			Switch on Int
+			Switch on String
+		Flip Flop Node
+			does a different action (out of 2 actions) every time it's called.
+		Gate:
+			Enter -> the code trying to get through.
+			Open -> the code that unlocks the gate.
+			Close -> the code that closes the gate.
+			Toggle -> the code that toggles the open state of the gate. 
+		Blueprint Array behaves like List<T>, as far as I can tell. 
+		Structures
+			'Break [Structure]' allows you to access the internal components of the structure, like the '.' operator does in code. (vector.x)
+			(IF YOU CANNOT SEE ANY PINS) Check the details panel. It's likely there are so many pins that unreal won't populate the node with all of them. 
+				Check the ones you need to add them as pins.
+		Enums
+			In the content browser -> context menu -> blueprints (NOT Blueprint class) -> enumeration.
+			Name is in the description.
+			Enumerations are in the enumerations.
+			You can use a (branch) node and an (equal enum) node to test the value of an input enum.
+			You can use a (switch on [MyEnumName]) node to make decisions based on an input enum.
+		Objects and Class variable types
+			Get classes by reference and use the variables and functions therein.
+		Set Timer by (Function Name) (Event Name)
+			can mark a function from a specific object to be called by loop every N seconds.
+		Project Things to a canvas:
+			Project						take a position on the screenspace canvas and project, and beam it into the world space.
+			Deproject					take a position in real world and translate it to screenspace.
+	}
+	--------
+	Tutorial Notes{
+		Cinematics
+			You can right click on any line with a trigger on it (really any colored line) and 
+				set Properties -> When Finished to Keep State 
+					if you want the animation to leave the acted upon object in the state they're in at the end of the animation.
+		Timeline 
+			Node that can keep track of passing ticks of time. 
+			Useful for day/night cycle if you turn on 
+		Open Level 
+			changes the level you're on.
+		Character Movement controls various stats for walking, jumping, falling, flying, etc.
+			I'm going to try and get a first/third character made sometime later on.
+		YOU NEED TO REPLACE THE ROOT WITH THE STATIC MESH TO GET SOME BLUEPRINTS OPERATING CORRECTLY.
+	}
+	--------
+	Console {
+		Exec commands 
+			UFUNCTION(Exec)
+				void Host();
+			Exec commands are callable through the Unreal terminal (accessed by the ~ key) 
+			Execv functions can be placed in 
+				PlayerControllers
+				Possessed Pawns
+				HUDS
+				Cheat Managers
+				Game Modes
+				Game Instances
+	}
+	--------
+	Networking{
+		Actors
+			Only Relevant to Owner
+			Always Relevant
+			Replicate Movement
+				If checked, actor's transform will replicate to client machines (requires replicate be checked)
+			Net Load On Client
+				If checked, actor will spawn on client machines
+			Net Use Owner Relevancy
+			Replay Rewindable
+			Replicates
+				If checked, actor will replicate on client machines. 
+			Net Dormancy
+			Net Cull Distance Squared
+			Net Update Frequency
+			Min Net Update Frequency
+			Net Priority
+			Replicated Movement
+				Location Quantization Level
+				Velocity Quantization Level
+				Rotation Quantization Level
+		Variables
+			RepNotify																Anytime the value is changed, a special function is called on both Network Authority and Remote Machines.
+			Replicate																Anytime the value is changed, the change is also sent to the other machines.
+		Events
+			Not Replicated
+			Multicast
+				Replicated to all (if server)
+					This event is sent to the server to be performed and replicated to all.
+			Run On Server
+				Replicate this event from net owning client to server
+					This event notifies the server to run it.
+			Run On Owning Client
+				Replicate this event from the server to the owning client
+					(For dedicated servers,) this event notifies clients to run it. 
+		Example 
+			Server tells each client and itself to open Card Menu.
+			Player n's local pawn relaying command to its counterpart on the server to move.
+			Player n's cursor on the server moves.
+			The server tells each connected client to move Player n's cursor.
+			Player n's cursor on the server tells each client to play sound and visual effects associated with movement, interaction, canceling, back, etc.
+			The server tells each client to replicate the movement of Player n's cursor as it happens so their version of Player n's cursor also moves
+			Player n's cursor triggers a function that cannotChoose card other cursor already owns.
+	}
+	--------
+	Command Line{
+		Server
+			Unreal Version UE4Editor.exe path -> Game .uproject path -> Specific Unreal Map path from Content Folder -> -server (-log)
+				"C:\Program Files (x86)\UE_4.23\Engine\Binaries\Win64\UE4Editor.exe" "C:\Users\Stephen\Dropbox\Projects\Unreal Engine\Test\PuzzlePlatforms\PuzzlePlatforms.uproject" /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap -server -log
+		Client
+			Unreal Version -> Game uproject path -> (Server IP adress ->) -game -> (-log)
+				"C:\Program Files (x86)\UE_4.23\Engine\Binaries\Win64\UE4Editor.exe" "C:\Users\Stephen\Dropbox\Projects\Unreal Engine\Test\PuzzlePlatforms\PuzzlePlatforms.uproject" 127.0.0.1 -game -log
+				Powershell IMPORTANT: & "C:\Program Files (x86)\UE_4.23\Engine\Binaries\Win64\UE4Editor.exe" "C:\Users\Stephen\Dropbox\Projects\Unreal Engine\Test\PuzzlePlatforms\PuzzlePlatforms.uproject" -game -log
+					~ 										(Type tilde to get into the unreal command line)
+						Log LogOnline VeryVerbose			This settings logging to the most verbose level it can be.
+	}
+	--------
+	C++{
+		UI from C++ User Interface
+			In [GameName].Build.cs file, add UMG to the Range List
+				PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "UMG" 
+			});
+			#Include "Blueprint/UserWidget.h"
+			IN THE .h add
+				TSubClassOf<class UUserWidget> [VariableName];
+					TSubClassOf<class UUserWidget> MenuClass;
+			IN THE .cpp CONSTRUCTOR add
+				ConstructorHelpers::FClassFinder<UUserWidget> [Name](TEXT("[GamePath]"));
+				if (!ensure([Name].Class != nullptr)) return;
+				[VariableName] = [Name].Class;
+					ConstructorHelpers::FClassFinder<UUserWidget> MenuBPClass(TEXT("/Game/MenuSystem/WBP_MainMenu"));
+					if (!ensure(MenuBPClass.Class != nullptr)) return;
+					MenuClass = MenuBPClass.Class;
+	}
+}

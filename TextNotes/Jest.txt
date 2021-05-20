@@ -1,0 +1,103 @@
+Jest{
+	'npm i jest'										default testing npm package
+		setup and teardown						https://jestjs.io/docs/setup-teardown{
+			Organizing Tests{
+				beforeAll(() => console.log('1 - beforeAll'));
+				afterAll(() => console.log('1 - afterAll'));
+				beforeEach(() => console.log('1 - beforeEach'));
+				afterEach(() => console.log('1 - afterEach'));
+				test('', () => console.log('1 - test'));
+				describe('Scoped / Nested block', () => {
+					beforeAll(() => console.log('2 - beforeAll'));
+					afterAll(() => console.log('2 - afterAll'));
+					beforeEach(() => console.log('2 - beforeEach'));
+					afterEach(() => console.log('2 - afterEach'));
+					test('', () => console.log('2 - test'));
+				});
+				
+				// 1 - beforeAll
+				// 1 - beforeEach
+				// 1 - test
+				// 1 - afterEach
+				// 2 - beforeAll
+				// 1 - beforeEach
+				// 2 - beforeEach
+				// 2 - test
+				// 2 - afterEach
+				// 1 - afterEach
+				// 2 - afterAll
+				// 1 - afterAll 
+			}
+
+			Test Organization Hierarchy{
+				describe('outer', () => {
+					console.log('describe outer-a');
+				
+					describe('describe inner 1', () => {
+						console.log('describe inner 1');
+						test('test 1', () => {
+							console.log('test for describe inner 1');
+							expect(true).toEqual(true);
+						});
+					});
+				
+					console.log('describe outer-b');
+				
+					test('test 1', () => {
+						console.log('test for describe outer');
+						expect(true).toEqual(true);
+					});
+				
+					describe('describe inner 2', () => {
+						console.log('describe inner 2');
+						test('test for describe inner 2', () => {
+							console.log('test for describe inner 2');
+							expect(false).toEqual(false);
+						});
+					});
+				
+					console.log('describe outer-c');
+				});
+				
+				// describe outer-a
+				// describe inner 1
+				// describe outer-b
+				// describe inner 2
+				// describe outer-c
+				// test for describe inner 1
+				// test for describe outer
+				// test for describe inner 2
+			}
+		}
+		asynchronous testing {
+			async / await
+				test('testasyncwaitName', async () => {
+					await asyncFunc();
+				})
+				test('testDoneName', (done) => {
+					asyncFunc();
+					done();
+				})
+				test('testReturnPromiseName', () => { // resolves / rejects
+					return expect(asyncFunc()).resolves.toBe('Jim');
+				})
+		}
+		mocking {
+			functions {
+
+			}
+			files { // non-ES6 classes 
+				.
+				├── config
+				├── __mocks__
+				│   └── fs.js
+				├── models
+				│   ├── __mocks__
+				│   │   └── user.js
+				│   └── user.js
+				├── node_modules
+				└── views
+			}
+		}
+	'npm i jest-each'								parameterized testing
+}

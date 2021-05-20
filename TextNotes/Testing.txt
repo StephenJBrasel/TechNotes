@@ -1,0 +1,18 @@
+UnitTesting{
+	Positve
+		Make sure every individual unit, from fields to methods, operate the way they should independently of the rest of the program
+		Mocking
+	Negative
+		Make sure that methods and classes behave in an appropriate manner, or fail gracefully, when provided with incorrect input.
+		Typical Negative tests:
+			Edge cases: Maximum & minimum tests
+			Boundary cases: Max-1/Max/Max+1 & Min+1/Min/Min-1 tests
+			Corner cases: what happens if other portions of the program also have extreme or incorrect values 
+}
+--------
+Integration Testing {
+	Positive
+		Test that certain expected / common operations perform as intended.
+	Negative
+		Test that the program fails gracefully when confronted with unusual input / state.
+}

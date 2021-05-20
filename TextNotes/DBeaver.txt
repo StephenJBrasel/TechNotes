@@ -1,0 +1,3 @@
+DBeaver{
+	Ctrl+Enter 					Run line of execution.
+}
