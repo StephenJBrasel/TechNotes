@@ -21,7 +21,12 @@ Programming{
 			Data is immutable
 			Describes computation in terms of statements that change a program state.
 		Functional 
-			Treats computation as the avaluation of mathematical functions 
+			Treats computation as the evaluation of mathematical functions
+		Unsynchronized
+			https://www.youtube.com/watch?v=wyABTfR9UTU
+			NOT async / await, but constraining synchronicity.
+			Individual modules are thread-safe by being either stateful or stateless as necessary.
+			messages are sent to a module, some time later the module returns a receipt message. 
 	
 	3-Tier Architecture
 		Persistence Layer
@@ -85,9 +90,10 @@ Programming{
 				A prototype is a base object which can be cloned and extended
 				This form of inheritance is supported by delegation
 		(APILE) Layering
-			persistence
-			service
+			The idea of separating the layers between the user and the hardware: 
 			ui
+			service
+			persistence
 		Encapsuilation
 			the idea of bundling data and methods that work on the data within one unit
 			The idea an object's state should be accessed and manipulated through a public interface (i.e. accessors/getters and mutators/setters)
@@ -95,13 +101,13 @@ Programming{
 				public, protected, package-private, private
 
 		(Composition, Aggregation, Association)
-			Composition describes a relationship between two or more objects where one object maintains instances of the other object(s). 
+			Composition describes a relationship between two or more objects where one object [maintains] instances of the other object(s). 
 				(has-a)
 				associated objects do not perform the same task that the conglomerate performs.
 				The compopsite object is responsible for the lifecycle of all constituant instances
 				Example: An order has multiple line items
 				:A computer has an SSD card
-			Aggregation describes a relationship between two or more objects where one object contains multiple instances of other objects. 
+			Aggregation describes a relationship between two or more objects where one object [contains] multiple instances of other objects. 
 				(has-a)
 				The lifecycle of the containeed objects are independent of the aggregate object's
 				Example: A department has multiple employees
@@ -119,7 +125,7 @@ Programming{
 			Objects should have one and only one (general) purpose
 			A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class.
 			This principle states that software component (function, class or module) should focus on one unique tasks (have only one responsibility).
-		Open/Closed
+		Open / Closed
 			Open for extension; closed for modification
 			"Software entities ... should be open for extension, but closed for modification."
 			This principle states that software entities should be designed with the application growth (new code) in mind (be open to extension), but the application growth should require the smaller amount of changes to the existing code as possible (be closed for modification).
@@ -141,10 +147,10 @@ Programming{
 		Pure									pure functions take something in, puts something out
 		Unpure									pure functions take something in and change something.
 
-	Stages of Red/Green Development (Test Driven Development)
+	Stages of Red / Green Development (Test Driven Development)
 		Red										Your tests should fail
 			Go write the code
-		Red/Green								Your tests should pass
+		Red / Green								Your tests should pass
 		Refactor
 
 	Expression

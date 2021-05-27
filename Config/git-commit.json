@@ -1,0 +1,36 @@
+{
+	"README": {
+		"prefix": [""],
+		"body": [
+			"This is a VSCode git-commit snippets file. There are 2 install methods.",
+			"1. (Windows) If it is placed in the ~/AppData/Roaming/Code/User/snippets/ folder, these snippets will be available.",
+			"2. Copy and paste any or all of the snippets below into your VSCode's git-commit snippets file: Go to File -> Preferences -> User Snippets, type in git-commit, then paste them inside of above the bottom curly bracket `}`."
+		],
+		"description": "Tells you how to install this file."
+	},
+	"Git Commit Template": {
+		"prefix": ["c", "commit"],
+		"body": [
+			"${1|feat,fix,docs,style,refactor,perf,test,build,ci|}(${2:scope}): ${3:subject} #${4|wip,irrelevant|}",
+			"",
+			"${5:multi-line description of the details of changes\n- [ ] If practical, use markdown\nSee (Git Commit Message Guidelines)[https://gist.github.com/abravalheri/34aeb7b18d61392251a2] for examples.}",
+			"",
+			"${6|Initializes,Progresses,Closes|} ${7:Issue-#}"
+		],
+		"description": "Start a commit message with relevant details."
+	},
+	"Git Commit Header": {
+		"prefix": ["head", "header", "start"],
+		"body": [
+			"${1|feat,fix,docs,style,refactor,perf,test,build,ci|}(${2:scope}): ${3:subject} #${4|wip,irrelevant|}"
+		],
+		"description": "Creates a git commit header template."
+	},
+	"Git Commit Footer (Addresses Issue)": {
+		"prefix": ["a", "address", "ref", "reference" ],
+		"body": [
+			"${1|Initializes,Progresses,Closes|} ${2:Issue-#}"
+		],
+		"description": "Addresses (or references) to a particular issue."
+	}
+}
