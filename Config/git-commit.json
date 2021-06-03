@@ -4,7 +4,7 @@
 		"body": [
 			"This is a VSCode git-commit snippets file. There are 2 install methods.",
 			"1. (Windows) If it is placed in the ~/AppData/Roaming/Code/User/snippets/ folder, these snippets will be available.",
-			"2. Copy and paste any or all of the snippets below into your VSCode's git-commit snippets file: Go to File -> Preferences -> User Snippets, type in git-commit, then paste them inside of above the bottom curly bracket `}`."
+			"2. Copy and paste any or all of the snippets below into your VSCode's git-commit snippets file: Go to File -> Preferences -> User Snippets, type in git-commit, then paste them inside of the file between the top `{` and the bottom curly bracket `}`."
 		],
 		"description": "Tells you how to install this file."
 	},
